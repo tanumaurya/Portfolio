@@ -1,0 +1,60 @@
+/* basic css */
+* {
+    box-sizing : border-box;
+}
+
+body {
+     margin : 0px;
+}
+.menu_bar {
+    border : 1px solid grey;
+    height : 4rem;
+    background-color : lightblue;
+
+}
+.formula_container{
+    border : 1px solid grey;
+    height : 2rem;
+    background : lightgreen;  
+
+}
+.sheet_container{
+    border : 1px solid grey;
+    height : 2rem;
+    background : lightsalmon;  
+}
+/* grid -> remaining height */
+.grid_container{
+    border: 1px solid grey;
+    height : calc(100vh - 8rem);
+    /* background-color : LIghtgrey; */
+    overflow : auto;
+}
+.cell{
+    border : 0.5px solid grey;
+    height: 2rem;
+    width : 5rem;
+    /* background-color: brown; */
+}
+.tl_cell {
+    height : 1.4rem;
+    width: 2rem;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+.left_col>* {
+    width : 2rem;
+    text-align : center;
+    padding-top: 0.2rem;
+}
+.top_row{
+    display : flex;    
+}
+.top_row>.cell, .row>.cell {
+    padding-top: 0.2rem;
+    min-width : 5rem;
+    text-align : center;    
+}
+.row {
+    display: flex;
+}

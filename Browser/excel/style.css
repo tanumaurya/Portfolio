@@ -18,21 +18,20 @@ body {
     background : lightgreen;  
 
 }
-.sheet_container{
-    border : 1px solid grey;
-    height : 2rem;
-    background : lightsalmon;  
-}
+
+
+/*  ***************** grid starts ********************** */
 /* grid -> remaining height */
 .grid_container{
     border: 1px solid grey;
     height : calc(100vh - 8rem);
     /* background-color : LIghtgrey; */
     overflow : auto;
+    position: relative;
 }
 .cell{
     border : 0.5px solid grey;
-    height: 2rem;
+    height: 1.5rem;
     width : 5rem;
     /* background-color: brown; */
 }
@@ -48,13 +47,47 @@ body {
     padding-top: 0.2rem;
 }
 .top_row{
-    display : flex;    
+    display : flex;
+    position: absolute;
+    top: 0;
+    left:2rem;     
+}
+.left_col{
+    position: absolute;
+    top:1.4rem;
+}
+.grid{
+    position : absolute;
+    left: 2.01rem;
 }
 .top_row>.cell, .row>.cell {
     padding-top: 0.2rem;
     min-width : 5rem;
-    text-align : center;    
+    text-align : center;
+    
 }
 .row {
     display: flex;
+}
+/* **************************sheets container******************** */
+.sheet_container{
+    /* border : 1px solid grey; */
+    height : 2rem;
+    /* background : lightsalmon;  */
+    display: flex; 
+}
+.add_sheet{
+    height: 2rem;
+    border:2px solid grey;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sheet{
+    height: 2rem;
+    border:1px solid grey;
+    width: 4rem;
+    text-align: center;
+    padding-top: 0.2rem;
 }

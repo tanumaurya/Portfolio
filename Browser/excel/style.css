@@ -10,17 +10,36 @@ body {
     border : 1px solid grey;
     height : 4rem;
     background-color : lightblue;
-
 }
 .formula_container{
     border : 1px solid grey;
     height : 2rem;
-    background : lightgreen;  
+    /* background : lightgreen;   */
+    /* flex enable -> vertical centering */
+    display: flex;
+    align-items : center;
+}
+.formula_img{
+    height: 1.2rem;
+
+}
+.address_bar{
+    width: 20%;
+    text-align: center;
+    border:none;
+    border-right:1px solid gray;
+    margin-right:1.5rem;
+    outline:none;
+}
+.formula_bar{
+    margin-left:0.5rem;
+    width:70%;
+    border:none;
+    border-left:1px solid gray; 
 
 }
 
-
-/*  ***************** grid starts ********************** */
+/*  ***************** grid container starts ********************** */
 /* grid -> remaining height */
 .grid_container{
     border: 1px solid grey;
@@ -33,6 +52,8 @@ body {
     border : 0.5px solid grey;
     height: 1.5rem;
     width : 5rem;
+    /* outline: lightblue; */
+    /* border : 1px solid blue; */
     /* background-color: brown; */
 }
 .tl_cell {

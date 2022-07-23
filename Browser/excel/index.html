@@ -10,7 +10,39 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="menu_bar"></div>
+    <div class="menu_bar">
+        <!-- how to build a drop down -->
+        <select name=""  class="select_f_family">
+            <option value="Courier New">Font-1</option>
+            <option value="Arial">Font-2</option>
+            <option value="Courier New">Font-3</option>
+            <option value="Georgia">Font-3</option>
+            <option value="'Franklin Gothic Medium'">Font-4</option>
+            <option value="'Trebuchet MS'">Font-5</option>
+        </select>
+        <select name="" class="select_f_size" >
+            <option value="12">small</option>
+            <option value="16" selected>medium</option>
+            <option value="18">large</option>
+            <option value="20">x1</option>
+        </select>
+        <!-- bold italic underline  -->
+        <div class="bui_container">
+            <i class="fas fa-bold "></i>
+            <i class="fas fa-underline "></i>
+            <i class="fas fa-italic"></i>
+        </div>
+        <!-- colors-->
+        <div class="alignment_container">
+            <i class="fas fa-align-left left"></i>
+            <i class="fas fa-align-center center"></i>
+            <i class="fas fa-align-justify justify"></i>
+            <i class="fas fa-align-right right"></i>
+        </div>
+    </div>
+
+
+
     <div class="formula_container">
         <input type="text" class="address_bar" readonly value="A1">
         <img src="pngwing.com.png" class="formula_img"/>
@@ -31,6 +63,7 @@
         </div>
         <div class="sheet" myId="1">sheet 1</div>
     </div>
+    <script src="init.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

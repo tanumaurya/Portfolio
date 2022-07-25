@@ -1,5 +1,5 @@
 // create grid
-function init(){
+function initUI(){
     let topRow = document.querySelector(".top_row");
     let leftCol = document.querySelector(".left_col");
     let grid = document.querySelector(".grid");
@@ -40,4 +40,27 @@ function init(){
     grid.appendChild(row);
     }
 }
-init();
+// initUI();
+
+let db = [];
+function initDb() {
+    for(let i=0; i< 100; i++){
+       let rowArr = [];
+       for(let j=0; j< 26; j++){
+          let cellObj = {
+            fontFamily: "Courier new",
+            fontSize: "16",
+            isBold: false,
+            isItalic: false,
+            isunderline: false,
+            
+          }
+          rowArr.push(cellObj);
+       } 
+       db.push(rowArr);
+    }
+}
+
+initUI();
+initDb();
+console.log(db);

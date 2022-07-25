@@ -37,6 +37,13 @@ body {
     align-items: center;
     /* font-weight: bold; */
 }
+i{
+    color : rgb(120, 112, 112)
+}
+.selected {
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    color: black;
+}
 .formula_container{
     border : 1px solid grey;
     height : 2rem;
@@ -109,6 +116,9 @@ body {
     padding-top: 0.2rem;
     min-width : 5rem;
     text-align : center;   
+}
+.row>.cell {
+     font-family: "Courier New";
 }
 .row {
     display: flex;

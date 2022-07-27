@@ -40,7 +40,8 @@ function initUI(){
     grid.appendChild(row);
     }
 }
-// initUI();
+
+// 1.creation 2d db -> to represent every cell in the excel grid
 
 let db = [];
 function initDb() {
@@ -52,8 +53,8 @@ function initDb() {
             fontSize: "16",
             isBold: false,
             isItalic: false,
-            isunderline: false,
-            
+            isunderline: false, 
+            cAlignment:"justify" 
           }
           rowArr.push(cellObj);
        } 
@@ -63,4 +64,4 @@ function initDb() {
 
 initUI();
 initDb();
-console.log(db);
+// console.log(db);

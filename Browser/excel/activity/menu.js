@@ -4,6 +4,9 @@ let fontFamilySelector = document.querySelector(".select_f_family");
 let boldButton = document.querySelector(".fa-bold");
 let italicButton = document.querySelector(".fa-italic");
 let underlineButton = document.querySelector(".fa-underline");
+let addressBar = document.querySelector(".address_bar");
+let alignmentBtns = document.querySelectorAll(".alignment_container i");
+
 
 fontSizeSelector.addEventListener("change", function(){
     let fontSize = fontSizeSelector.value;
@@ -93,12 +96,36 @@ underlineButton.addEventListener("click", function () {
         dbCellObj.isUnderline = true;
     }
 })
+ 
+// alignment ka code
+for(let i=0; i < alignmentBtns.length; i++){
+    alignmentBtns[i].addEventListener("click", function () {
+        // step1
+        let curElem = alignmentBtns[i];
+        //  remove selected class from every elem 
+        for (let j = 0; j < alignmentBtns.length; j++) {            
+            alignmentBtns[j].classList.remove("selected");
+        }
+        curElem.classList.add("selected");
+        let alignment = curElem.classList[2];
+        // ui pe changes
+        let cellToBeChanged = getCell();
+        // console.log("cellToBeChanged",cellToBeChanged)
+        cellToBeChanged.style.textAlign = alignment; 
+        
+        // db update
+        let { rid, cid } = getRidCidFromAddressBar();
+        let dbCellObj = db[rid][cid];
+        dbCellObj.cAlignment = alignment;
+
+    })
+}
 
 // *************************helper function********************
  
 function getCell() {
     //1.set -> address get from address bar
-    let {rid, cid} = getRidCidFromAddressBar();
+    let  {rid, cid} = getRidCidFromAddressBar();
     //2.address -> ui cell get (html)
     let cell = document.querySelector(`.grid .cell[rid="${rid}"][cid="${cid}"]`);
     return cell;

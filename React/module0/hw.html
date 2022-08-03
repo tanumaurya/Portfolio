@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- react ui change algorithm -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- using react library it changes actual web page -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- babel library converts your jsx into js  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <!-- babel -> it knowa that we need to convert JSX to simple js  -->
+    <script type="text/babel">
+        function Counter(props) {
+            // state variable, state function changer
+            let arr = React.useState(0);
+            let count = arr[0];
+            let setCount = arr[1];
+            function incrementCount() {
+                setCount(count + 1);
+            }
+         function decrementCount() {
+                setCount(count - 1);
+            }
+            return (
+                <div>
+                    <h1>Counter {props.value}</h1>
+                    <h2>Counter value is {count} </h2>
+                    <button onClick={incrementCount}>+</button>
+                    <button onClick={decrementCount}>-</button >
+                </div>
+            )
+        }
+        function CounterParent() {
+            return (
+                <div>
+                    <Counter value="1" />
+                    <Counter value={2} />
+                    <Counter value={3} />
+                    <Counter value={4} />
+                </div>
+            )
+        }
+        //1  it puts  component  return value  in the  div with id=app 
+        ReactDOM.render(<CounterParent />, document.getElementById("app"));
+    </script>
+</body>
+
+</html>
+
+
+<!-- component -> functional
+class based 
+-->

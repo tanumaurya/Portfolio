@@ -46,19 +46,17 @@ function setMenuBar(rid, cid) {
     fontFamilySelector.value = cellObj.fontFamily;
     //console.log(cellObj); 
     // ui changes
-    let curElem = alignmentBtns[i];
         //  remove selected class from every elem 
-        for (let j = 0; j < alignmentBtns.length; j++) {            
-            alignmentBtns[j].classList.remove("selected");
+    for (let j = 0; j < alignmentBtns.length; j++) {                                                    
+        alignmentBtns[j].classList.remove("selected");
+    }
+    for (let j = 0; j < alignmentBtns.length; j++) {
+        let iscurrent = alignmentBtns[j].classList[2];
+        if (iscurrent == cellObj.cAlignment) {
+            alignmentBtns[j].classList.add("selected");
         }
-        for (let j = 0; j < alignmentBtns.length; j++) {
-            let iscurrent = alignmentBtns[j].classList[2];
-            if (iscurrent == cellObj.cAlignment) {
-                alignmentBtns[j].classList.add("selected");
-            }
-        }
-}
-    
+    }
     //  set formula in sync
-//     let formula = cellObj.formula;
-//     formulaBar.value = formula;
+    let formula = cellObj.formula;
+    formulaBar.value = formula;
+}   

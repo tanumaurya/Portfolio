@@ -9,9 +9,13 @@ let alignmentBtns = document.querySelectorAll(".alignment_container i");
 
 
 fontSizeSelector.addEventListener("change", function(){
+    //   **************UI*************************
+    // what to change
     let fontSize = fontSizeSelector.value;
+    // where to change
     // 1.  set -> address get from address bar
     let cellToBeChanged = getCell(); 
+    // do the change
     //3.style set
     cellToBeChanged.style.fontSize = fontSize + "px";
      // change in db also
@@ -74,7 +78,6 @@ italicButton.addEventListener("click", function () {
         italicButton.classList.add("selected");
         cellToBeChanged.style.fontStyle = "italic";
         dbCellObj.isItalic = true;
-
     }
 })
 // make a text underline in  dom -> (textDecoration) underline/none
@@ -96,7 +99,7 @@ underlineButton.addEventListener("click", function () {
         dbCellObj.isUnderline = true;
     }
 })
- 
+
 // alignment ka code
 for(let i=0; i < alignmentBtns.length; i++){
     alignmentBtns[i].addEventListener("click", function () {
@@ -117,35 +120,18 @@ for(let i=0; i < alignmentBtns.length; i++){
         let { rid, cid } = getRidCidFromAddressBar();
         let dbCellObj = db[rid][cid];
         dbCellObj.cAlignment = alignment;
-
     })
 }
 
+
 // *************************helper function********************
- 
-function getCell() {
+ function getCell() {
     //1.set -> address get from address bar
     let  {rid, cid} = getRidCidFromAddressBar();
     //2.address -> ui cell get (html)
     let cell = document.querySelector(`.grid .cell[rid="${rid}"][cid="${cid}"]`);
     return cell;
 } 
-
-function getRidCidFromAddressBar(){
-    let address = addressBar.value;
-    console.log(address);
-    return addresstoRidCid(address);
-}
-function addresstoRidCid(address){
-    // ->D2 -> rid -> 1, cid -> 3
-    let ciChar = address.charCodeAt(0);
-    let rowid = address.substr(1);
-    let cid = Number(ciChar) - 65;
-    let rid = Number(rowid) -1;
-    return { "rid": rid, "cid":cid}
-    //  console.log(ciChar + " " + rowid);
-    
-}
 function getRidCidFromAddressBar(){
     let address = addressBar.value;
     // console.log(address);

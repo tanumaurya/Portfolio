@@ -1,10 +1,12 @@
 
 import './App.css';
+import Movies from './moviesComponent/Movies';
 
 function App() {
   return (
-    <h1>Hello React</h1>
+    <Movies> </Movies>
   );
 }
 
-export default App;
+export default App; 
+

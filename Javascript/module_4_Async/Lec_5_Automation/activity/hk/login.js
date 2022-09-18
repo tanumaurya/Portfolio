@@ -1,4 +1,3 @@
-
 // browser control
 // controls a headless browser -> browser that is by default not visible 
 // npm i puppeteer

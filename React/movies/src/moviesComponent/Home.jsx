@@ -2,7 +2,7 @@ import React from 'react';
 import "./Header.css";
 import { results } from "../movies";
 import "./Banner.css";
-import "movieList.css";
+import "./movieList.css";
 import "./Pagination.css";
 // import Header from "./Header.jsx";
 // import Banner from "./Banner.jsx";
@@ -12,7 +12,7 @@ function Home() {
     function incPageNumber(){
         setpageNumber(function(pageNo){
             return pageNo +1;
-        })
+        }) 
     }
     function descPageNum(){
         if(pageNo==1){
@@ -85,54 +85,42 @@ function MovieList(props) {
             setMovie(movies);
         } 
         fetchData();
-    }, [props.pageNo]);   
-}
-
-function filterLogic(searchText, movieArray) {
-    let filteredMovieArray = [];
-    for(let i=0; i< movieArray.length; i++){
-        let upperSearchText = searchText.toUpperCase();
-        let movieName = movieArray[i].original_title;
-        let upperText = movieName.toUpperCase();
-        let ans = upperText.includes(upperSearchText);
-        if(ans == true){
-            filteredMovieArray.push(movieArray[i]);
-        }        
+    }, [props.pageNo]);  
+    
+    function filterLogic(searchText, movieArray) {
+        let filteredMovieArray = [];
+        for(let i=0; i< movieArray.length; i++){
+            let upperSearchText = searchText.toUpperCase();
+            let movieName = movieArray[i].original_title;
+            let upperText = movieName.toUpperCase();
+            let ans = upperText.includes(upperSearchText);
+            if(ans == true){
+                filteredMovieArray.push(movieArray[i]);
+            }        
+        }
+        return filteredMovieArray;    
     }
-    return filteredMovieArray;    
-}
-let searchedMovies= filterLogic(value, movie);
-return(
-    <>   
-        <h2>Trending Movies</h2>
-        <input onChange = {setText} value={value}></input>
-         {
-           movies == "" ? <h2>Loading Movies . . . </h2> :            
-            <div className = "trending_box">
-               {searchedMovies.map((movieObj, idx) => {
-                   return (
-                      <div key = {idx} className = "poster_box">
-                          <h2>{movieObj.original_title}</h2>
-                          <img src = {"https://image.tmdb.org/t/p/w500/" + movieObj.poster_path} className= "poster_img"></img>                        
-                     </div>
-                   )
-               })}
-            </div>
-         }     
-    </>
-)
-
-
-function Pagination() {
-    return (
-      <h2>Pagination</h2>
-
-
+    let searchedMovies= filterLogic(value, movies);
+    return(
+        <>   
+            <h2>Trending Movies</h2>
+            <input onChange = {setText} value={value}></input>
+             {
+                movies == "" ? <h2>Loading Movies . . . </h2> :            
+                <div className = "trending_box">
+                   {searchedMovies.map((movieObj, idx) => {
+                       return (
+                          <div key = {idx} className = "poster_box">
+                              <h2>{movieObj.original_title}</h2>
+                              <img src = {"https://image.tmdb.org/t/p/w500/" + movieObj.poster_path} className= "poster_img"></img>                        
+                         </div>
+                       )
+                   })}
+                </div>
+             }     
+        </>
     )
 }
-
-
-
 function Header() {
     return (
         <div className="flex">
@@ -145,3 +133,19 @@ function Header() {
 
     )
 }
+
+// function UseffectExplainer() {
+//     let [count, setCount] = React.useState(0);
+//     let [count5, setCount5] = React.useState(0);
+//     // lifecyle method
+//     console.log("fn is executed");
+//     function effectFn() {
+//         console.log("I am an effect")
+//     }
+//     function incrementCount() {
+//         setCount(count + 1);
+//     }
+//     function incrementCount5() {
+//         setCount5(count + 5);
+//     }
+// }

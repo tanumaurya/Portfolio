@@ -1,0 +1,16 @@
+.pagination{
+    display:flex;
+    justify-content: center;
+}
+
+
+.pagination_btn {
+    border: 1px solid ;
+    height: 3rem;
+    width: 4.5rem;
+    border-radius: 0.5 rem;
+    text-align: center;
+}
+.page_no{
+    border: 10px solid #e056fd ;
+}

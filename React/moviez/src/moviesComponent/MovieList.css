@@ -2,14 +2,17 @@
     display: flex;
     flex-wrap : wrap;
     justify-content: space-evenly;
+    margin-inline-start: 1rem;
+}
+.trending_box>*{
+    text-align : center;
 }
 .poster_box {
     width: 30%;
-    height: 30rem;
-    border: 1px lightgray;
-    margin-bottom: 3rem;
+    height:30rem;
+    margin-bottom: 1rem;
 
 }
 .poster_img{
-    width: 100%;
+    width: 65%;
 }

@@ -5,7 +5,7 @@ import "./MovieList.css";
 import "./Pagination.css";
 import Header from './Header.jsx';
 import Banner from './Banner.jsx';
-import MovieList from './MovieList';
+import MovieList from './MovieList.jsx';
 
 function Home() {
   const [pageNo, setpageNumber]=React.useState(1);

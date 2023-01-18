@@ -1,9 +1,9 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import Favourites from './Favourites.jsx';
 import Home from './Home';
 import PageNotFound from './PageNotFound';
-import {Route, Switch} from "react-router-dom";
+import {Route, Switch,Redirect } from "react-router-dom";
 function Movies() {
   return (
     <>  

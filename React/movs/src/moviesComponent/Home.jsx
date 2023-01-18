@@ -98,11 +98,7 @@ function Home() {
           )
       }
     
-    
-  
-  
-  
-  //movie list
+   //movie list
   function MovieList(props){
     console.log(props.pageNo);
     let [movies, setMovie] = React.useState("");
@@ -162,9 +158,6 @@ function Home() {
                     })}
                     </div>
            }
-           </>
-  
-  
-        )
-  
+           </>  
+        )  
   }

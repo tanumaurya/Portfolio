@@ -11,7 +11,7 @@ function Header(){
              <h2>Movies</h2>
           </Link>
           <Link to ="/favourites">   
-             <h2>Favorites</h2>
+             <h2>Favourites</h2>
           </Link>
       </div>
     )

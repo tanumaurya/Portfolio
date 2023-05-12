@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        
+
+    <title>Responsive Regisration Form </title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th, td {
+            padding: 6px;
+            text-align: left;
+        }
+    
+        th {
+            background-color: #ddd;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+		function saveData() {
+			var Designation = document.getElementById("class2").value;
+			var name = document.getElementById("name").value;
+			var mobile = document.getElementById("mobile").value;
+			var email = document.getElementById("email").value;
+			var employee_code = document.getElementById("employee_code").value;
+			var entry_date = document.getElementById("entry_date").value;
+			var Weekly_Off = document.getElementById("Weekly_Off").value;
+			var Reporting_Manager = document.getElementById("Reporting_Manager").value;
+			var state = document.getElementById("state").value;
+			var district = document.getElementById("district").value;
+			var city = document.getElementById("city").value;
+			var pin = document.getElementById("pin").value;
+			var working_state = document.getElementById("working_state").value;
+			var address = document.getElementById("class3").value;
+
+			var employee = {
+                "Designation": Designation,
+				"name": name,
+				"mobile": mobile,
+                "email": email,
+                "employee_code":employee_code,
+                "entry_date":entry_date,
+                "Weekly_Off" : Weekly_Off,
+                "Reporting_Manager":Reporting_Manager,
+                "state":state,
+                "district":district,
+                "city":city,
+                "pin":pin,
+                "working_state":working_state,
+                "address": address
+			};
+			// Store the customer data in local storage
+			var employees = JSON.parse(localStorage.getItem("employees") || "[]");
+            employees.push(employee);
+            localStorage.setItem("employees", JSON.stringify(employees));
+			// Update the table with the customer details
+			var table = document.getElementById("customerTable");
+			var row = table.insertRow(-1);
+			var DesignationCell = row.insertCell(0);
+			var nameCell = row.insertCell(1);
+			var mobileCell = row.insertCell(2);
+			var emailCell = row.insertCell(3);
+			var employee_codeCell = row.insertCell(4);
+			var entry_dateCell = row.insertCell(5);
+			var Weekly_OffCell = row.insertCell(6);
+			var Reporting_ManagerCell = row.insertCell(7);
+			var stateCell = row.insertCell(8);
+			var districtCell = row.insertCell(9);
+			var cityCell = row.insertCell(10);
+			var pinCell = row.insertCell(11);
+			var working_stateCell = row.insertCell(12);
+			var addressCell = row.insertCell(13);
+
+			DesignationCell.innerHTML = Designation;			
+            nameCell.innerHTML = name;
+			// addressCell.innerHTML = address;
+			mobileCell.innerHTML = mobile;
+			emailCell.innerHTML = email;
+			employee_codeCell.innerHTML = employee_code;
+			entry_dateCell.innerHTML = entry_date;
+			Weekly_OffCell.innerHTML = Weekly_Off;
+			Reporting_ManagerCell.innerHTML = Reporting_Manager;
+			stateCell.innerHTML = state;
+			districtCell.innerHTML = district;
+			cityCell.innerHTML = city;
+			pinCell.innerHTML = pin;
+			working_stateCell.innerHTML = working_state;
+			addressCell.innerHTML = address;
+
+			// Clear the form
+			document.getElementById("class2").value = "";
+			document.getElementById("name").value = "";
+			document.getElementById("mobile").value = "";
+			document.getElementById("email").value = "";
+			document.getElementById("employee_code").value = "";
+			document.getElementById("entry_date").value = "";
+			document.getElementById("Weekly_Off").value = "";
+			document.getElementById("Reporting_Manager").value = "";
+			document.getElementById("state").value = "";
+			document.getElementById("district").value = "";
+			document.getElementById("city").value = "";
+			document.getElementById("pin").value = "";
+			document.getElementById("working_state").value = "";
+			document.getElementById("class3").value = "";
+
+		}
+
+		function displayData() {
+			var employees = JSON.parse(localStorage.getItem("employees") || "[]");			
+            var table = document.getElementById("customerTable");
+
+
+			// Add the customer rows
+			for (var i = 0; i < employees.length; i++) {
+				var row = table.insertRow(-1);
+				var DesignationCell = row.insertCell(0);
+				var nameCell = row.insertCell(1);
+				var mobileCell = row.insertCell(2);
+				var emailCell = row.insertCell(3);
+				var employee_codeCell = row.insertCell(4);
+				var entry_dateCell = row.insertCell(5);
+				var Weekly_OffCell = row.insertCell(6);
+				var Reporting_ManagerCell = row.insertCell(7);
+				var stateCell = row.insertCell(8);
+				var districtCell = row.insertCell(9);
+				var cityCell = row.insertCell(10);
+				var pinCell = row.insertCell(11);
+				var working_stateCell = row.insertCell(12);
+				var addressCell = row.insertCell(13);
+
+                DesignationCell.innerHTML = employees[i].Designation;
+				nameCell.innerHTML = employees[i].name;
+				mobileCell.innerHTML = employees[i].mobile;
+				emailCell.innerHTML = employees[i].email;
+				employee_codeCell.innerHTML = employees[i].employee_code;
+				entry_dateCell.innerHTML = employees[i].entry_date;
+				Weekly_OffCell.innerHTML = employees[i].Weekly_Off;
+				Reporting_ManagerCell.innerHTML = employees[i].Reporting_Manager;
+				stateCell.innerHTML = employees[i].state;
+				districtCell.innerHTML = employees[i].district;
+				cityCell.innerHTML = employees[i].city;
+				pinCell.innerHTML = employees[i].pin;
+				working_stateCell.innerHTML = employees[i].working_state;
+				addressCell.innerHTML = employees[i].address;
+
+			}
+		}
+	</script>
+    </head>
+    <body onload="displayData()">
+        <!-- <div class="container"> -->
+            <!-- <header>Regisration Form</header> -->
+
+        <form action="#" >
+            <div class="body">
+                <div class="container">
+                    <div class="details personal">
+                        <!-- <label> User Type</label> -->
+                        <span class="title"> User Type</span>
+
+                        <div > 
+
+                            <input type="radio"  value="Sales User" name="user" class="radio-button" required>Sales User
+                            <input type="radio" value="System User" name="user" class="radio-button" required>System User
+                        
+                        </div>            
+                    </div>
+
+
+                    <div class="details ID">
+
+                        <span class="title"> Basic Information</span>
+                        <div class="fields">
+        
+                            <div class="input-field" >
+                                <div class="class1">
+
+                                    <input type="text" placeholder="Select Designation" class="class2" id="class2" required>
+                                    <div class="plus">+</div>
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" placeholder="Name" id="name" required>
+                            </div>
+                            <div class="input-field">
+                                <input type="tel" placeholder="Mobile Number" pattern="[0-9]{10}" id="mobile"  required>
+                            </div>
+                            <div class="input-field">
+                                <input type="email" placeholder="Email ID" id="email" required>
+                            </div>
+                            <div class="input-field">
+                                <input type="number" placeholder="Employee Code" id="employee_code">
+                            </div>
+                            <div class="input-field">
+                                <input type="date"  name="entry-date" id="entry_date">
+                            </div>
+                            <div class="input-field">
+                                <input type="text" placeholder="Weekly Off" id="Weekly_Off">
+                            </div>
+                            <div class="input-field">
+                                <input type="text" placeholder="Reporting Manager" id="Reporting_Manager">
+                            </div>
+                            
+                            <div class="input-field">
+                                <input type="text" placeholder="State" id="state">
+                            </div>
+                            <div class="input-field">
+                                <input type="text" placeholder="District" id="district">
+                            </div>
+                            <div class="input-field">
+                                <input type="text" placeholder="City" id="city" >
+                            </div>
+                            <div class="input-field">
+                                <input type="number" placeholder="Pincode" id="pin" >
+                            </div>
+                            <!-- <div class="last"> -->
+                            <div class="input-field1">
+                                <input type="text" placeholder="Working State" id="working_state" >
+                            </div>
+                            <div class="input-field1">
+                                <input type="text" placeholder="Address" class="class3" >
+                            <!-- </div> -->                       
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="save">
+                <button type="submit" class="save_button" onclick="saveData()" >Save</button>
+            </div>
+            
+            
+        </form>
+
+        <table class="customerTable" id="customerTable">
+            <thead>
+                <tr>
+                    <th>Designation</th>
+                    <th>Name</th>
+                    <th>Mobile Number</th>
+                    <th>E-mail</th>
+                    <th>employee_code</th>
+                    <th>entry_date</th>
+                    <th>Weekly_Off</th>
+                    <th>Reporting_Manager</th>
+                    <th>state</th>
+                    <th>District</th>
+                    
+                    <th>city</th>
+                    <th>pin</th>
+                    <th>working_state</th>
+                    <th>address</th>
+
+
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+
+
+
+        <script src="script.js"></script>
+            
+        <!-- </div> -->
+        
+
+        
+
+    </body>
+</html>

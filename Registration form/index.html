@@ -59,6 +59,7 @@
                 "working_state":working_state,
                 "address": address
 			};
+            
 			// Store the customer data in local storage
 			var employees = JSON.parse(localStorage.getItem("employees") || "[]");
             employees.push(employee);
@@ -261,8 +262,6 @@
                     <th>pin</th>
                     <th>working_state</th>
                     <th>address</th>
-
-
                 </tr>
             </thead>
             <tbody></tbody>

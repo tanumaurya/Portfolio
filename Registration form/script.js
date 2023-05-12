@@ -5,7 +5,7 @@ const pinInput = document.querySelector('#pin');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    
+
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const pin  = pinInput.value.trim();

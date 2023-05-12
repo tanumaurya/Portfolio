@@ -31,6 +31,7 @@ form.addEventListener('submit', (event) => {
         form.submit();
         alert('form is submitted');
     }
+    
 });
 
 function isValidEmail(email) {

@@ -12,7 +12,7 @@ form.addEventListener('submit', (event) => {
     const pin  = pinInput.value.trim();
 
 //   if (name === '') {
-//     alert('Please enter your name.');
+//     alert('Please  enter your name.');
 //     nameInput.focus();
 //   } else
     if (name.length <= 2) {

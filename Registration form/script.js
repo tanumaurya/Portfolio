@@ -30,7 +30,6 @@ form.addEventListener('submit', (event) => {
     }else {
         // form is valid, submit it
         form.submit();
-
         alert('form is submitted');
     }
 });

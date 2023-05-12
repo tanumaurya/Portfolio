@@ -11,9 +11,6 @@ form.addEventListener('submit', (event) => {
     const email = emailInput.value.trim();
     const pin  = pinInput.value.trim();
 
-
-//   console.log(name);
-//   console.log(name.length);
 //   if (name === '') {
 //     alert('Please enter your name.');
 //     nameInput.focus();

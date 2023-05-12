@@ -5,7 +5,6 @@ const pinInput = document.querySelector('#pin');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    // saveData();
     
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
@@ -15,6 +14,7 @@ form.addEventListener('submit', (event) => {
 //     alert('Please  enter your name.');
 //     nameInput.focus();
 //   } else
+
     if (name.length <= 2) {
         alert('Please enter your full name.');
         nameInput.focus();

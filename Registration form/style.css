@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 body{
     margin-top: 20px;
     min-height: 100vh;
@@ -122,7 +123,8 @@ form .fields .input-field1{
     padding: 0 15px;
     height: 42px;
     margin: 8px 0;
-}
+} 
+
 .input-field1 input, select{
     outline: none;
     font-size: 14px;
